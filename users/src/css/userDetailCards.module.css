@@ -41,7 +41,8 @@
 
 .location {
   margin: 0;
-  font-size: 20px;
+  font-size: 17px;
+  font-weight: 500;
 }
 
 .hobbies {
@@ -58,6 +59,5 @@
   padding: 3px 5px;
   color: rgb(110, 127, 197);
   font-size: 12px;
-  /* letter-spacing: 0.3px; */
   font-weight: 700;
 }

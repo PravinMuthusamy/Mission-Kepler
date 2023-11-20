@@ -5,7 +5,7 @@
 .nav_list {
   list-style: none;
   display: flex;
-  color: gray;
+  color: rgb(78, 82, 97);
   font-weight: 700;
   gap: 10px;
   padding: 0;
