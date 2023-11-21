@@ -5,8 +5,8 @@ const NavList = ({userRoles}) => {
   return (
     <nav >
       <ul className={navListStyles.nav_list}>
-        {userRoles.map((role, index) => (
-          <li key={index}>{role}</li>
+        {userRoles.map((role) => (
+          <li key={role}>{role}</li>
         ))}
       </ul>
     </nav>

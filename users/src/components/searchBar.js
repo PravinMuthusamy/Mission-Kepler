@@ -1,12 +1,15 @@
 import React from 'react';
-import searchIcon from '../assets/images/search-solid.svg';
 import searchBarStyles from '../css/searchBar.module.css'
+import searchIcon from '../assets/images/search-solid.svg';
+import Image from './image';
+import placeholderImage from '../assets/images/download.jpeg';
+import * as constants from '../constants/constants'
 
-const SearchBar = () => {
+const SearchBar = ({imageError, onError}) => {
   return (
    <div className={searchBarStyles.container}>
-      <img src={searchIcon} alt="Search Icon" className={searchBarStyles.icon} />
-      <input type="text" placeholder="Search users" className={searchBarStyles.input} />
+      <Image imgSrc={imageError ? placeholderImage : searchIcon} imgAlt={constants.SEARCH_ICON_ALT} className={searchBarStyles.icon} onError={onError}/>
+      <input type="text" placeholder={constants.SEARCH_INPUT_PLACEHOLDER} className={searchBarStyles.input} />
     </div> 
   );
 };
