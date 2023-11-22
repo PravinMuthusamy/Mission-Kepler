@@ -10,13 +10,13 @@
   width: calc((100% - 40px) / 3);
   border-radius: 20px;
   height: 256px;
-  background-color: rgb(251, 252, 255);
+  background-color: rgb(250, 251, 255);
 }
 
 .card:hover {
   cursor: pointer;
-  border: 1px solid rgb(216, 231, 227);
-  box-shadow: 2px 2px 6px rgb(215, 219, 236);
+  border: 2px solid rgb(197, 202, 232);
+  box-shadow: 2px 4px 14px 2px rgb(197, 202, 232);
 }
 
 .image {
@@ -40,12 +40,14 @@
 }
 
 .location {
+  font-family: 'Mulish', sans-serif;
   margin: 0;
-  font-size: 17px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .hobbies {
+  font-family: "Mulish", sans-serif;
+  font-weight: 600;
   display: flex;
   gap: 5px;
   flex-wrap: wrap;

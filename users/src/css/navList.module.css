@@ -5,7 +5,6 @@
 .nav_list {
   list-style: none;
   display: flex;
-  color: rgb(78, 82, 97);
   font-weight: 700;
   gap: 10px;
   padding: 0;
@@ -13,12 +12,23 @@
 }
 
 .nav_list li {
+  font-family: "Mulish", sans-serif;
   cursor: pointer;
   padding: 15px;
+  font-size: 17px;
   border-radius: 10px;
 }
 
 .nav_list li:hover {
+  color: #fff;
   background-color: rgb(136, 158, 248);
+}
+
+.nav_list li a {
+  text-decoration: none;
+  color: rgb(78, 82, 97);
+}
+
+.nav_list li:hover a {
   color: #fff;
 }
