@@ -1,0 +1,18 @@
+.pageContainer {
+  margin: 0 auto;
+  padding: 80px 150px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  display: flex;
+  font-family: "Merriweather";
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

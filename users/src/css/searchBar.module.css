@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgb(215, 219, 236);
+  border-radius: 5px;
+  padding: 7px;
+  width: 22.5%;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+  margin: 5px;
+}
+
+.input {
+  font-family: "Mulish", sans-serif;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 10px;
+  height: 25px;
+  font-size: 18px;
+}
