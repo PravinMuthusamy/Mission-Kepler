@@ -1,0 +1,138 @@
+.cartMainContainer {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.emptyCartMessage{
+  padding: 0 37px;
+}
+.cartContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.cartMainContainer h2 {
+  color: #333;
+}
+.individualCart {
+  display: flex;
+  flex-grow: 1;
+  padding: 0 17px 0 21px;
+}
+
+.cartMainContainer ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 10px 0;
+}
+
+.cartList {
+  display: flex;
+  margin: 0 15px 35px 0;
+  box-shadow: 2px 2px 4px 2px #ccc;
+  align-items: center;
+  border-radius: 5px;
+  margin-left: 48px;
+  background-color: #fff;
+}
+
+.leftCartSection {
+  display: flex;
+  flex-grow: 1;
+  position: relative;
+}
+
+.leftCartSection img {
+  position: absolute;
+  top: -30px;
+  left: -33px;
+  width: 122px;
+  height: 80px;
+  border-radius: 10px;
+}
+
+.rightCartSection {
+  position: relative;
+  height: 80px;
+  width: 323px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 5px 0;
+}
+
+.rightCartSection div {
+  font-size: 14px;
+  margin: 5px 5px 0px 100px;
+  font-weight: 600;
+}
+
+.quantityControls {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  right: 43px;
+  margin-top: 77px;
+  height: 28px;
+  width: 78px;
+  box-shadow: 2px 2px 4px 2px #ccc;
+  background-color: #fff;
+  font-size: 12px;
+  border-radius: 6px;
+}
+
+.quantityDecrement {
+  font-size: 20px;
+}
+
+.quantityControls button {
+  border: none;
+  background-color: #fff;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.orderContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 2px 2px 4px 2px #ccc;
+}
+
+.totalPrice {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  height: 119px;
+  padding: 0 36px;
+  font-weight: 400;
+}
+
+.totalPrice div:first-of-type {
+  font-size: 11px;
+}
+
+.totalPrice div:nth-child(2) {
+  font-size: 17px;
+}
+
+.placeOrder {
+  padding: 0 34px;
+}
+
+.placeOrder button {
+  background-color: #000;
+  border: none;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 11px 20px;
+  border-bottom-right-radius: 8px;
+  cursor: pointer;
+}

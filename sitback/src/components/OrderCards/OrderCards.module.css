@@ -1,0 +1,45 @@
+.orderShoppingCard {
+    list-style: none;
+    width: 390px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  
+  .productOrderImage {
+    width: 100%;
+    object-fit: cover;
+    height: 195px;
+    border-radius: 8px;
+    border-top-left-radius: 0px;
+  }
+  
+  .orderNamePrice {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 13px 0 5px;
+  }
+  
+  .productOrderName {
+    margin: 0;
+    height: 20px;
+    overflow: ellipsis;
+  }
+  
+  .productOrderPrice {
+    margin: 0;
+  }
+  
+  .productOrderQuantity{
+    margin: 0;
+    font-size: 12px;
+    padding: 0 0 6px;
+  }
+
+  .productOrderDescription {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  

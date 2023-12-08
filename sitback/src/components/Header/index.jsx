@@ -1,31 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import styles from './Header.module.css'; 
 import { FaSortDown } from 'react-icons/fa';
-import './Header.css'; 
+import * as constants from '../../constants/AppConstants'
 
-const Header = () => {
-  const [navItems, setNavItems] = useState([]);
-
-  useEffect(() => {
-    // Fetch navigation items dynamically
-    // Replace the following with your actual API call
-    const fetchedNavItems = ['COUCHES', 'CHAIRS', 'DINING'];
-    setNavItems(fetchedNavItems);
-  }, []);
-
+const Header = ({categories}) => {
   return (
-    <header className="header">
-      <div className="left-section">
-        <p className="sitback">SITBACK</p>
+    <header className={styles.header}>
+      <div className={styles.leftSection}>
+        <a href={`/`} className={styles.sitback}>{constants.SITBACK}</a>
       </div>
-      <nav className="nav-bar">
-        {navItems.map((item, index) => (
-          <a key={index} href={`#${item.toLowerCase()}`}>
-            {item}
+      <nav className={styles.navBar}>
+        {categories.map((item) => (
+          <a key={item.category} href={`/categories/${item.category.toLowerCase()}`}>
+            {item.category.toUpperCase()}
           </a>
         ))}
       </nav>
-        <p className="user">
-          Nijin Vinodan <FaSortDown className="down-icon" />
+        <p className={styles.user}>
+          {constants.USER} <FaSortDown className={styles.downIcon} />
         </p>
     </header>
   );

@@ -1,10 +1,11 @@
 import React from 'react';
-import './Footer.css'
+import styles from "./Footer.module.css";
+import * as constants from '../../constants/AppConstants'
 
 function Footer() {
     return (
-        <div className='footer'>
-            <p>COPYRIGHTS 2020</p>
+        <div className={styles.footer}>
+            <p>{constants.COPYRIGHTS}</p>
         </div>
     );
 }
