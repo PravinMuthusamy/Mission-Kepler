@@ -7,15 +7,13 @@ const Header = ({ categories }) => {
   const [activeCategory, setActiveCategory] = useState(null);
 
   useEffect(() => {
-    const storedCategory = localStorage.getItem('activeCategory');
-    if (storedCategory) {
-      setActiveCategory(storedCategory);
-    }
+    const currentPath = window.location.pathname;
+    const categoryFromPath = currentPath.replace('/categories/', '').toLowerCase();
+    setActiveCategory(categoryFromPath);
   }, []);
 
   const handleCategoryClick = (category) => {
-    setActiveCategory(category);
-    localStorage.setItem('activeCategory', category);
+    setActiveCategory(category.toLowerCase());
   };
 
   return (
@@ -26,16 +24,20 @@ const Header = ({ categories }) => {
         </a>
       </div>
       <nav className={styles.navBar}>
-        {categories.map((item) => (
-          <a
-            key={item.category}
-            href={`/categories/${item.category.toLowerCase()}`}
-            onClick={() => handleCategoryClick(item.category)}
-            className={activeCategory === item.category ? styles.activeCategory : styles.normalCategory}
-          >
-            {item.category.toUpperCase()}
-          </a>
-        ))}
+        {categories.map((item) => {
+          const categoryClassName = activeCategory === item.category.toLowerCase() ? styles.activeCategory : styles.normalCategory;
+
+          return (
+            <a
+              key={item.category}
+              href={`/categories/${item.category.toLowerCase()}`}
+              onClick={() => handleCategoryClick(item.category)}
+              className={categoryClassName}
+            >
+              {item.category.toUpperCase()}
+            </a>
+          );
+        })}
       </nav>
       <p className={styles.user}>
         {constants.USER} <FaSortDown className={styles.downIcon} />
