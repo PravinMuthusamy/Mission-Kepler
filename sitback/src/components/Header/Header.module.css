@@ -46,4 +46,10 @@
     font-weight: bold;
   }
   
-  
+  .normalCategory{
+    border-bottom: 5px solid transparent;
+  }
+
+  .activeCategory{
+    border-bottom: 5px solid #000;
+  }

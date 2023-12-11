@@ -26,7 +26,9 @@
 
 .productName {
   margin: 0;
-  text-overflow: ellipsis;
+  height: 24px;
+  width: 296px;
+  overflow: hidden;
 }
 
 .productPrice {
@@ -43,11 +45,16 @@
   font-weight: 700;
   padding: 16px 0;
   color: green;
+  display: flex;
+  gap: 5px;
 }
 
 .shieldIcon {
   height: 14px;
   width: 14px;
+  display: flex;
+  align-items: center;
+  margin-top: 2px;
 }
 
 .buttonsContainer {
@@ -55,17 +62,17 @@
   justify-content: flex-end;
   gap: 5px;
   border-top: 1px solid #cccccc5c;
-  padding: 12px 0 0; 
+  padding: 12px 0 0;
 }
 
-.addToCart{
-    background-color: #000;
-    border: none;
-    color: #fff;
-    font-size: 13px;
-    font-weight: 600;
-    padding: 11px 20px;
-    border-bottom-right-radius: 8px;
+.addToCart {
+  background-color: #000;
+  border: none;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 11px 20px;
+  border-bottom-right-radius: 8px;
   cursor: pointer;
 }
 
