@@ -50,11 +50,10 @@
 }
 
 .shieldIcon {
-  height: 14px;
-  width: 14px;
+  height: 17px;
+  width: 17px;
   display: flex;
   align-items: center;
-  margin-top: 2px;
 }
 
 .buttonsContainer {
