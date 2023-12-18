@@ -1,31 +1,17 @@
-// LoginPage.js
-import React, { useState } from "react";
+import React from "react";
+import LoginForm from "../../components/LoginForm";
+import styles from './LoginPage.module.css';
+import { LOGIN } from "../../constants/container.constants";
 
-const LoginPage = ({ onLogin }) => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleLoginClick = () => {
-    // Call onLogin function with entered username and password
-    onLogin(username, password);
-  };
+const LoginPage = ({onLogin,isLoggedIn,onLogout}) => {
 
   return (
-    <div>
-      <h2>Login Page</h2>
-      <input
-        type="text"
-        placeholder="Username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button onClick={handleLoginClick}>Login</button>
+    <div className={styles.loginPageContainer}>
+      <div className={styles.loginFormContainer}>
+        <h2 className={styles.formTitle}>{LOGIN.title}</h2>
+        <p className={styles.formDescription}>{LOGIN.description}</p>
+        <LoginForm onLogin={onLogin}/>
+      </div>
     </div>
   );
 };

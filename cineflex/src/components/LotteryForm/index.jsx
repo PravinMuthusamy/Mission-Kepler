@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './LotteryForm.module.css';
+import { LOTTERY } from '../../constants';
 
 const LotteryForm = ({ onTryLuck }) => {
   const [mobileNumber, setMobileNumber] = useState('');
@@ -16,13 +17,16 @@ const LotteryForm = ({ onTryLuck }) => {
   const inputStyle = {
     border: (mobileNumber.length > 0 && mobileNumber.length < 10)? '1px solid red' : 'initial',
   };
+const disableButton = {
+  disabled : (mobileNumber.length < 10)? 'true' : 'false',
+};
   return (
     <div className={styles.lotteryFormWrapper}>
-        Your Mobile Number can win you exciting prizes
+        {LOTTERY.message}
       <label>
-        <input type="text" placeholder='Enter Mobile Number' value={mobileNumber} style={inputStyle} onChange={handleInputChange} />
+        <input type="text" placeholder={LOTTERY.placeholder} value={mobileNumber} style={inputStyle} onChange={handleInputChange} />
       </label>
-      <button onClick={handleTryLuck}>I'm Feeling Lucky</button>
+      <button onClick={handleTryLuck} style={disableButton}>{LOTTERY.button}</button>
     </div>
   );
 };

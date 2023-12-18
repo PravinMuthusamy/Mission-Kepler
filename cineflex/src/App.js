@@ -6,6 +6,7 @@ import AllMovies from "./pages/AllMoviesPage";
 import LoginPage from "./pages/LoginPage";
 import NowShowing from "./pages/NowShowingPage";
 import HomePage from "./pages/HomePage";
+import Header from "./components/Header";
 import { userIsLoggedIn, loginUser, logoutUser } from "./services/AuthService";
 
 function App() {
@@ -28,9 +29,11 @@ function App() {
       setLoggedIn(true);
       // Store user information in local storage
       localStorage.setItem("userName", enteredUserName);
+      return true
     } else {
       // Failed login
       console.log("Invalid credentials");
+      return false
     }
   };
 
@@ -44,6 +47,7 @@ function App() {
   return (
     <div className="App">
       <Router>
+      <Header isLoggedIn={isLoggedIn} onLogout={handleLogout} />
         <Routes>
           <Route
             path="/"

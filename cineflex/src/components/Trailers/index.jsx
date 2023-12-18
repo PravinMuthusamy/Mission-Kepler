@@ -1,41 +1,39 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./Trailers.module.css";
 import Image from "../Image";
+import { TRAILER } from "../../constants/component.constants";
 import SintelImage from "../../Assets/sindel-background.png";
 
-function Trailers({ isLoggedIn }) {
-  const history = useHistory();
-
-  const handleWatchNow = () => {
-    if (isLoggedIn) {
-      // Redirect to Now Watching page
-      history.push("/nowWatching");
-    } else {
-      // Redirect to Login page
-      history.push("/login");
-    }
-  };
+const Trailers = ({ isLoggedIn }) => {
+  const watchNowLink = isLoggedIn ? "/showTime" : "/login";
 
   return (
     <div className={styles.trailerContainer}>
-      <div className={styles.trailerImage}>
-        <Image imgSrc={SintelImage} imgAlt="Sintel" className={styles.image} />
-      </div>
-      <div className={styles.trailerDetails}>
-        <h2 className={styles.title}>Sintel</h2>
-        <p className={styles.description}>
-          Sintel tells the story of a friendship between a girl named Sintel,a
-          baby dragon and the desparate lengths she will go to when the
-          friendshipis taken from her.Sintel is created Blender in 2010 as a pet
-          project to demonstrate Blender capabilities.
+      <h2 className={styles.trailerTitle}>{TRAILER.title}</h2>
+      {!isLoggedIn && (
+        <p className={styles.signInContainer}>
+          {TRAILER.signInMsg} <Link to={"/login"}>{TRAILER.signInLink}</Link>
         </p>
-        <button className={styles.watchNowButton} onClick={handleWatchNow}>
-          WATCH NOW
-        </button>
+      )}
+      <div className={styles.movieContainer}>
+        <div className={styles.trailerImage}>
+          <Image
+            imgSrc={SintelImage}
+            imgAlt="Sintel"
+            className={styles.image}
+          />
+        </div>
+        <div className={styles.trailerDetails}>
+          <h2 className={styles.title}>{TRAILER.movieTitle}</h2>
+          <p className={styles.description}>{TRAILER.movieDescription}</p>
+          <Link to={watchNowLink} className={styles.watchNowButton}>
+            {TRAILER.button}
+          </Link>
+        </div>
       </div>
     </div>
   );
-}
+};
 
 export default Trailers;

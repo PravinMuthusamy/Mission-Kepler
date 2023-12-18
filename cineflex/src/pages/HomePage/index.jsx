@@ -1,17 +1,16 @@
 import React from "react";
-import styles from "./HomePage.module.css";
-import Header from "../../components/Header";
 import CoverPicture from "../../components/CoverPicture";
 import LotterySection from "../../components/LotterySection";
 import Trailers from "../../components/Trailers";
+import OtherLanguages from "../../components/OtherLanguages";
 
-function HomePage({ isLoggedIn, onLogout }) {
+function HomePage({ isLoggedIn }) {
   return (
-    <div className={styles.homePageWrapper}>
-      <Header isLoggedIn={isLoggedIn} onLogout={onLogout} />
+    <div>
       <CoverPicture />
       <LotterySection />
       <Trailers isLoggedIn={isLoggedIn}/>
+      <OtherLanguages /> 
     </div>
   );
 }
