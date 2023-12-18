@@ -1,0 +1,54 @@
+.headerWrapper {
+  background-color: black;
+  padding: 10px 30px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+    height: 50px;
+}
+
+.navigationLinks {
+  display: flex;
+  gap: 40px;
+  font-weight: 700;
+}
+
+.navigationLink {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.navigationLink:hover{
+    color: #7373e8;
+}
+
+.selectedLink{
+  color: #7373e8;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+}
+
+.greeting {
+}
+
+.logoutBtn {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font-weight: 400;
+	cursor: pointer;
+	outline: inherit;
+}

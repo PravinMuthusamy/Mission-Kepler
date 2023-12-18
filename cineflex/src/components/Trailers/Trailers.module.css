@@ -1,0 +1,46 @@
+.trailerContainer {
+    display: flex;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  .trailerImage {
+    flex: 1;
+  }
+  
+  .image {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+  }
+  
+  .trailerDetails {
+    flex: 2;
+    padding: 0 20px;
+  }
+  
+  .title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .description {
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  
+  .watchNowButton {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .watchNowButton:hover {
+    background-color: #2980b9;
+  }
+  
