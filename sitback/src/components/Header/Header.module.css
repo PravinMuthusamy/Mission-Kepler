@@ -1,0 +1,55 @@
+.header {
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 23px 20px;
+    box-shadow: 0 4px 4px #ccc;
+    z-index: 1000;
+  }
+  
+  .sitback {
+    margin: 0;
+    text-decoration: none;
+    color: #000;
+    padding: 0 25px;
+    font-weight: 700;
+    font-size: 18px;
+  }
+  
+  .user {
+    display: flex;
+    align-items: center;
+    padding: 0 53px;
+    font-size: small;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  
+  .downIcon {
+    padding: 0 10px 2px;
+ }
+  
+  .navBar {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+  }
+  
+  .navBar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .normalCategory{
+    border-bottom: 5px solid transparent;
+  }
+
+  .activeCategory{
+    border-bottom: 5px solid #000;
+  }

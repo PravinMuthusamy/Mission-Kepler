@@ -1,0 +1,85 @@
+.shoppingCard {
+  list-style: none;
+  padding: 15px 8px;
+  background-color: #fff;
+  width: 390px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.productImage {
+  width: 100%;
+  object-fit: cover;
+  height: 195px;
+  border-radius: 8px;
+  border-top-left-radius: 0px;
+}
+
+.namePrice {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 15px 0;
+}
+
+.productName {
+  margin: 0;
+  height: 24px;
+  width: 300px;
+  overflow: hidden;
+}
+
+.productPrice {
+  margin: 0;
+}
+
+.productDescription {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.guaranteeText {
+  font-size: 13px;
+  font-weight: 700;
+  padding: 16px 0;
+  color: green;
+  display: flex;
+  gap: 5px;
+}
+
+.shieldIcon {
+  height: 17px;
+  width: 17px;
+  display: flex;
+  align-items: center;
+}
+
+.buttonsContainer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
+  border-top: 1px solid #cccccc5c;
+  padding: 12px 0 0;
+}
+
+.addToCart {
+  background-color: #000;
+  border: none;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 11px 20px;
+  border-bottom-right-radius: 8px;
+  cursor: pointer;
+}
+
+.addToWishlist {
+  color: #33333387;
+  border: none;
+  background-color: #ffffff;
+  font-weight: 600;
+  padding: 9px 17px;
+  cursor: pointer;
+}

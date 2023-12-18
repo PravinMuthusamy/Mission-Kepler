@@ -1,0 +1,37 @@
+.shoppingCartContainer {
+  height: 90.5vh;
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  padding-top: 90px;
+  background-color: rgb(247, 247, 247);
+}
+.shoppingCartContent{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.toggleContainers {
+  display: flex;
+  cursor: pointer;
+  gap: 20px;
+  padding: 0 37px;
+}
+
+.toggleButtons button {
+  padding: 8px;
+  margin-right: 10px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background-color: #f4f4f4;
+}
+
+.toggleContainers h4 {
+  padding: 5px 0;
+}
+.toggleContainers h4.active {
+  border-bottom: 2px solid #000;
+}
+.toggleButtons button.active {
+  background-color: #ddd;
+}

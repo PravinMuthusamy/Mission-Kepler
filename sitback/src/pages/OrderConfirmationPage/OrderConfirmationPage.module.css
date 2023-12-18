@@ -1,0 +1,24 @@
+.orderConfirmationContainer{
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(247, 247, 247);
+  padding: 156px 162px 72px;
+}
+
+.orderConfirmationContainer h3{
+  margin: 0;
+ font-weight: 600;
+ font-size: 20px;
+ padding: 0 0 10px;
+}
+
+.orderConfirmationContainer p{
+padding: 0 0 3px;
+}
+
+.orderConfirmationContainer ul{
+display: flex;
+padding: 0;
+gap: 40px;
+}
+
