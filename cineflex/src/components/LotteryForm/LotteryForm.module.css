@@ -1,8 +1,7 @@
 .lotteryFormWrapper{
     display: flex;
     align-items: center;
-    background-color: rgb(178, 144, 53);
-    color: #fff;
+    background-color: #b29035;
     padding: 30px;
     gap: 50px;
     justify-content: center;
@@ -14,11 +13,16 @@
     padding: 18px;
     width: 300px;
     border: none;
+    font-size: 0.6em;
+}
+
+.lotteryFormWrapper input:focus{
+    outline: none;
 }
 
 .lotteryFormWrapper button{
-    background-color: rgb(191, 40, 40);
-    padding: 10px 20px;
+    background-color: #bf2828;
+    padding: 13px 20px;
     font-size: 1em;
 	color: inherit;
 	border: none;

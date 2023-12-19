@@ -1,11 +1,13 @@
-import React from "react";
+import React,{useContext} from "react";
 import { Link } from "react-router-dom";
 import styles from "./Trailers.module.css";
 import Image from "../Image";
 import { TRAILER } from "../../constants/component.constants";
 import SintelImage from "../../Assets/sindel-background.png";
+import UserContext from "../../Contexts/UserContext";
 
-const Trailers = ({ isLoggedIn }) => {
+const Trailers = () => {
+  const { isLoggedIn } = useContext(UserContext);
   const watchNowLink = isLoggedIn ? "/showTime" : "/login";
 
   return (

@@ -1,9 +1,11 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { LOGIN_FORM } from "../../constants/component.constants";
 import styles from "./LoginForm.module.css";
+import UserContext from "../../Contexts/UserContext";
 
-const LoginForm = ({ onLogin }) => {
+const LoginForm = () => {
+    const { onLogin } = useContext(UserContext);
   const usernameRef = useRef(null);
   const passwordRef = useRef(null);
   const [errorMessage, setErrorMessage] = useState("");

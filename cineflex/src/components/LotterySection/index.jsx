@@ -9,7 +9,7 @@ class LotterySection extends React.Component {
     super(props);
     this.state = {
       hasError: false,
-      showMessage: false, // New flag to control message visibility
+      showMessage: false, 
     };
   }
 
@@ -43,15 +43,17 @@ class LotterySection extends React.Component {
   render() {
     return (
       <div className={styles.lotterySectionWrapper}>
-        <LotteryForm onTryLuck={this.handleTryLuck} />
-        <div className={styles.message}>
+        {(!this.state.hasError) ?
+          (<LotteryForm onTryLuck={this.handleTryLuck} />)
+        :
+        (<div className={styles.message}>
           {this.state.showMessage && (
             <>
               {this.state.result === "success" && <SuccessMessage />}
               {this.state.result === "error" && <ErrorMessage />}
             </>
           )}
-        </div>
+        </div>)}
       </div>
     );
   }

@@ -1,11 +1,13 @@
-import React from "react";
+import React,{ useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styles from "./Header.module.css";
 import Image from "../Image";
 import Logo from "../../Assets/Logo.png";
 import { USER } from "../../constants/component.constants";
+import UserContext from "../../Contexts/UserContext";
 
-function Header({ isLoggedIn, onLogout }) {
+function Header() {
+  const { isLoggedIn, onLogout } = useContext(UserContext);
   const location = useLocation();
   const isLoginPage = location.pathname === "/login";
 
