@@ -2,7 +2,7 @@ import React, { useRef, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { LOGIN_FORM } from "../../constants/component.constants";
 import styles from "./LoginForm.module.css";
-import UserContext from "../../Contexts/UserContext";
+import UserContext from "../../contexts/UserContext";
 
 const LoginForm = () => {
     const { onLogin } = useContext(UserContext);

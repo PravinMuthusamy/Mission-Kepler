@@ -1,0 +1,40 @@
+.teaserCard {
+    width: calc(100% / 3 - 16px);
+  }
+  
+  .teaserVideo {
+    width: 100%;
+    height: 19rem;
+    object-fit: cover;
+  }
+  
+  .teaserTitle {
+    font-size: 1.68rem;
+    font-weight: 300;
+    margin: 12px 0;
+  }
+  
+  .videoContainer {
+    position: relative;
+  }
+  
+  .playIconContainer {
+    position: absolute;
+    left: 40%;
+    top: 35%;
+    height: 85px;
+    width: 85px;
+    color: #000;
+  }
+  
+  .playIcon {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .teaserDescription {
+    color: #4176b8;
+    font-size: 1.35rem;
+    font-weight: 400;
+    margin: 12px 0;
+  }

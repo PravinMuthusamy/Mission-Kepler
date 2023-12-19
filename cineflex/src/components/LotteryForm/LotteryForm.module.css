@@ -1,7 +1,7 @@
 .lotteryFormWrapper{
     display: flex;
     align-items: center;
-    background-color: #b29035;
+    background: linear-gradient(to right, #dcc031, #b78c16);
     padding: 30px;
     gap: 50px;
     justify-content: center;

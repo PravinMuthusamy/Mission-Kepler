@@ -1,16 +1,21 @@
 import React from "react";
 import CoverPicture from "../../components/CoverPicture";
-import LotterySection from "../../components/LotterySection";
+import ErrorBoundary from "../../components/ErrorBoundary";
 import Trailers from "../../components/Trailers";
 import OtherLanguages from "../../components/OtherLanguages";
+import LotteryForm from "../../components/LotteryForm";
+import ShortTeasers from "../../components/ShortTeasers";
 
-function HomePage({ isLoggedIn }) {
+function HomePage() {
   return (
     <div>
-      <CoverPicture />
-      <LotterySection />
-      <Trailers isLoggedIn={isLoggedIn}/>
-      <OtherLanguages /> 
+      <CoverPicture/>
+      <ErrorBoundary>
+        <LotteryForm/>
+      </ErrorBoundary>
+      <Trailers/>
+      <ShortTeasers/>
+      <OtherLanguages/> 
     </div>
   );
 }

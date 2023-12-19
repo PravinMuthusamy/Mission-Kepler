@@ -53,7 +53,7 @@
 }
 
 .watchNowButton {
-  background-color: rgb(178, 144, 53);
+  background: linear-gradient(to right, #f6a622, #ac8813);
   color: #fff;
   padding: 20px 30px;
   border: none;

@@ -1,9 +1,9 @@
-.current-movie-container {
+.currentMovieContainer {
     width: 71.5%;
     margin: 30px auto;
   }
   
-  .page-title {
+  .pageTitle {
     font-size: 1.5rem;
     letter-spacing: 2px;
     font-weight: 500;
@@ -11,25 +11,25 @@
     margin-bottom: 40px;
   }
   
-  .movie-title {
+  .movieTitle {
     font-size: 3rem;
     font-weight: 500;
     letter-spacing: 2px;
     margin-bottom: 16px;
   }
   
-  .video-container {
+  .videoContainer {
     position: relative;
   }
   
-  .movie-video {
+  .movieVideo {
     height: 65vh;
     width: 100%;
     object-fit: cover;
     margin-bottom: 24px;
   }
   
-  .play-icon-container {
+  .playIconContainer {
     position: absolute;
     cursor: pointer;
     left: 46%;
@@ -39,12 +39,12 @@
     color: #000;
   }
   
-  .play-icon {
+  .playIcon {
     width: 100%;
     height: 100%;
   }
   
-  .movie-description {
+  .movieDescription {
     font-size: 1.6rem;
     line-height: 1.25;
     font-weight: 300;

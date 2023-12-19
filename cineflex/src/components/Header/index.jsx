@@ -4,7 +4,7 @@ import styles from "./Header.module.css";
 import Image from "../Image";
 import Logo from "../../Assets/Logo.png";
 import { USER } from "../../constants/component.constants";
-import UserContext from "../../Contexts/UserContext";
+import UserContext from "../../contexts/UserContext";
 
 function Header() {
   const { isLoggedIn, onLogout } = useContext(UserContext);

@@ -2,18 +2,34 @@ import React, { useState } from 'react';
 import styles from './LotteryForm.module.css';
 import { LOTTERY } from '../../constants';
 
-const LotteryForm = ({ onTryLuck }) => {
+const LotteryForm = () => {
   const [mobileNumber, setMobileNumber] = useState('');
+  const [error,setError]=useState();
+  if(error)throw new Error(error)
+
+  const handleTryLuck = () => {
+    console.log(mobileNumber);
+    // Validate the length of the mobile number
+    if (mobileNumber.length === 10) {
+      
+      const isEven = parseInt(mobileNumber, 10) % 2 === 0;
+      if(isEven){
+        setError("success")
+      }else{
+        setError("error")
+      }
+    }
+  };
 
   const handleInputChange = (e) => {
     setMobileNumber(e.target.value);
   };
 
-  const handleTryLuck = () => {
-    if (mobileNumber.length === 10) {
-        onTryLuck(mobileNumber);
-      }
-  };
+  // const handleTryLuck = () => {
+  //   if (mobileNumber.length === 10) {
+  //       handleTryLuck(mobileNumber);
+  //     }
+  // };
   const inputStyle = {
     border: (mobileNumber.length > 0 && mobileNumber.length < 10)? '1px solid red' : 'initial',
   };

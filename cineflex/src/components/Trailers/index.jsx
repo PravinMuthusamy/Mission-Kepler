@@ -4,7 +4,7 @@ import styles from "./Trailers.module.css";
 import Image from "../Image";
 import { TRAILER } from "../../constants/component.constants";
 import SintelImage from "../../Assets/sindel-background.png";
-import UserContext from "../../Contexts/UserContext";
+import UserContext from "../../contexts/UserContext";
 
 const Trailers = () => {
   const { isLoggedIn } = useContext(UserContext);

@@ -8,7 +8,7 @@ import NowShowing from './pages/NowShowingPage';
 import HomePage from './pages/HomePage';
 import Header from './components/Header';
 import { userIsLoggedIn, loginUser, logoutUser } from './services/AuthService';
-import UserContext from './Contexts/UserContext';
+import UserContext from './contexts/UserContext';
 
 function App() {
   const [isLoggedIn, setLoggedIn] = useState(userIsLoggedIn());
