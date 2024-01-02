@@ -3,10 +3,10 @@ import { useState } from "react";
 const withAdvertisement = (WrappedComponent) => {
   const EnhancedComponent = (props) => {
     const [advertisementState, setAdvertisementState] = useState({
-      adTimer: 0,
-      adMessage: "",
-      isAdVisible: false,
-      isNotificationVisible: false,
+      timer: 0,
+      message: "",
+      showAd: false,
+      showNotification: false,
       isAdPlayed: false,
     });
 
@@ -14,20 +14,20 @@ const withAdvertisement = (WrappedComponent) => {
       if (isAd) setAdvertisementState({ ...advertisementState, isAdPlayed: true });
       setAdvertisementState({
         ...advertisementState,
-        adTimer: time,
-        adMessage: message,
-        isAdVisible: isAd,
-        isNotificationVisible: true,
+        timer: time,
+        message: message,
+        showAd: isAd,
+        showNotification: true,
       });
     };
 
     const stopAd = () => {
       setAdvertisementState({
         ...advertisementState,
-        adTimer: 0,
-        adMessage: "",
-        isAdVisible: false,
-        isNotificationVisible: false,
+        timer: 0,
+        message: "",
+        showAd: false,
+        showNotification: false,
       });
     };
 

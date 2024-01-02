@@ -1,15 +1,16 @@
-.teasers-section-container {
+.teasersSectionContainer {
     margin: 1% 0 5%;
     padding: 0 9.25%;
+    cursor: pointer;
   }
   
-  .teasers-title {
+  .teasersTitle {
     font-weight: 300;
     font-size: 2.6rem;
     margin-bottom: 36px;
   }
   
-  .teasers-container {
+  .teasersContainer {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;

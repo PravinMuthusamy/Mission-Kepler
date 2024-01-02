@@ -7,9 +7,9 @@ const OtherLanguages = () => {
       <p className={styles.languagesTitle}>{OTHER_LANGUAGES.title}</p>
       <div className={styles.languageListContainer}>
         {OTHER_LANGUAGES.languagesList.map((language) => (
-          <span key={language} className={styles.languageCard}>
+          <li key={language} className={styles.languageCard}>
             {language}
-          </span>
+          </li>
         ))}
       </div>
     </div>

@@ -29,26 +29,28 @@ const TeaserCard = ({ title, videoSrc, timer, message, showAd, showNotification,
   useEffect(() => {
     let interval;
 
-    // Run remaining time for ad
+console.log(memoizedAd);
+
+    // run remaining time for ad
     if (timer > 0 && message === TEASER_CARD.videoContent) {
       interval = setInterval(() => {
         if (!videoRef.current.paused)
           displayHandler(TEASER_CARD.contentTime - Math.floor(videoRef.current.currentTime), TEASER_CARD.videoContent, false);
       }, 1000);
     }
-    // Display ad
+    //display ad
     else if (timer <= 0 && message === TEASER_CARD.videoContent) {
       iconRef.current.style.display = "none";
       videoRef.current.pause();
       displayHandler(TEASER_CARD.adTime, TEASER_CARD.adContent, true);
     }
-    // Run remaining time for ad
+    // run remaining time for ad
     else if (timer > 0 && message === TEASER_CARD.adContent) {
       interval = setInterval(() => {
         displayHandler(timer - 1, TEASER_CARD.adContent, true);
       }, 1000);
     }
-    // Stop ad
+    //stop ad
     else if (timer <= 0 && message === TEASER_CARD.adContent) {
       videoRef.current.play();
       stopAd();
@@ -59,10 +61,11 @@ const TeaserCard = ({ title, videoSrc, timer, message, showAd, showNotification,
     };
   }, [timer]);
 
+
   return (
     <div className={styles.teaserCard}>
       <div className={styles.videoContainer} onClick={togglePlay}>
-        {showAd && <Image className="teaser-img" src={memoizedAd} alt={title} />}
+        {showAd && <Image className={styles.teaserImage} imgSrc={memoizedAd} imgAlt={title} />}
         <video className={styles.teaserVideo} poster={sindel} ref={videoRef} onPlay={playHandler} onPause={pauseHandler}>
           <source src={videoSrc} type="video/mp4" />
           {TEASER_CARD.videoWarning}
@@ -72,7 +75,7 @@ const TeaserCard = ({ title, videoSrc, timer, message, showAd, showNotification,
         </span>
       </div>
       <h3 className={styles.teaserTitle}>{title}</h3>
-      {showNotification && <p className={styles.teaserDescription}>{`${message} ${getFormattedTime(timer)}`}</p>}
+      {showNotification && <p className={styles.teaserDescription}>{message.concat(getFormattedTime(timer))}</p>}
     </div>
   );
 };

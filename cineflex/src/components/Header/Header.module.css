@@ -40,11 +40,9 @@
   display: flex;
   align-items: center;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 20px;
 }
 
-.greeting {
-}
 
 .logoutBtn {
     background: none;
@@ -54,5 +52,5 @@
 	font-weight: 400;
 	cursor: pointer;
 	outline: inherit;
-  font-size: 16px;
+  font-size: 20px;
 }

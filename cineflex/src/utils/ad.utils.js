@@ -7,7 +7,7 @@ const smallAds = [smallAd1, smallAd2];
 const largeAds = [largeAd1, largeAd2];
 
 export const getRandomSmallAd = () => {
-  return smallAds[Math.floor(Math.random() * smallAds.length)];
+  return smallAds[Math.ceil(Math.random() * smallAds.length)];
 };
 
 export const getRandomLargeAd = () => {

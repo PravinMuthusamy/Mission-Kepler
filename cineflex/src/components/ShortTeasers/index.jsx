@@ -4,6 +4,7 @@ import TeaserCard from "../TeaserCard";
 import Loader from "../Loader";
 import { getTeasers } from "../../services/MovieService";
 import { SHORT_TEASERS } from "../../constants/container.constants";
+import { NOW_SHOWING } from "../../constants";
 
 const ShortTeasers = () => {
   const [teasers, setTeasers] = useState([]);
@@ -21,7 +22,7 @@ const ShortTeasers = () => {
   const getTeaserContent = () => {
     let teaserContent = "";
     if (teasers.length > 0) {
-      teaserContent = teasers.map((teaser) => <TeaserCard key={teaser.title} title={teaser.title} videoSrc={teaser.videoSrc} />);
+      teaserContent = teasers.map((teaser) => <TeaserCard key={teaser.title} title={teaser.title} videoSrc={NOW_SHOWING.videoLink} />);
     } else {
       teaserContent = SHORT_TEASERS.noTeasers;
     }
@@ -29,9 +30,9 @@ const ShortTeasers = () => {
   };
 
   return (
-    <div className={styles["teasers-section-container"]}>
-      <h2 className={styles["teasers-title"]}>{SHORT_TEASERS.title}</h2>
-      <div className={styles["teasers-container"]}>{isLoaded ? getTeaserContent() : <Loader />}</div>
+    <div className={styles.teasersSectionContainer}>
+      <h2 className={styles.teasersTitle}>{SHORT_TEASERS.title}</h2>
+      <div className={styles.teasersContainer}>{isLoaded ? getTeaserContent() : <Loader />}</div>
     </div>
   );
 };
