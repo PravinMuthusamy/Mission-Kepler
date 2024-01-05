@@ -1,7 +1,6 @@
 .headerWrapper {
   background-color: black;
   padding: 20px 30px;
-  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -13,7 +12,7 @@
 }
 
 .logo {
-    height: 50px;
+  height: 50px;
 }
 
 .navigationLinks {
@@ -28,12 +27,8 @@
   text-decoration: none;
 }
 
-.navigationLink:hover{
-    color: #7373e8;
-}
-
-.selectedLink{
-  color: #7373e8;
+.navigationLink:hover,.selected {
+  color: #4b90e2;
 }
 
 .userInfo {
@@ -43,14 +38,12 @@
   font-size: 20px;
 }
 
-
 .logoutBtn {
-    background: none;
-	color: white;
-	border: none;
-	padding: 0;
-	font-weight: 400;
-	cursor: pointer;
-	outline: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  font-weight: 400;
+  cursor: pointer;
+  outline: inherit;
   font-size: 20px;
 }

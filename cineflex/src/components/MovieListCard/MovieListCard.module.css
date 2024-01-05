@@ -1,0 +1,36 @@
+.movieCard {
+  margin: 0 3px 44px;
+}
+
+.movieListImage {
+  height: 17.4rem;
+  width: 14rem;
+  cursor: pointer;
+}
+
+.movieListCardTitle {
+  font-size: 1.45rem;
+  font-weight: 300;
+  letter-spacing: 0.2px;
+  margin-bottom: 6px;
+}
+
+.movieListCardLikes {
+  font-size: 1.05rem;
+  font-weight: 300;
+}
+
+.movieListCardDetails {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.movieListCardLikeIcon {
+  cursor: pointer;
+}
+
+.movieListCardLikedIcon {
+  color: #f6a622;
+}

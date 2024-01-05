@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const withAdvertisement = (WrappedComponent) => {
-  const EnhancedComponent = (props) => {
+  const NewEnhancedComponent = (props) => {
     const [advertisementState, setAdvertisementState] = useState({
       timer: 0,
       message: "",
@@ -11,12 +11,14 @@ const withAdvertisement = (WrappedComponent) => {
     });
 
     const displayAdHandler = (time, message, isAd) => {
-      if (isAd) setAdvertisementState({ ...advertisementState, isAdPlayed: true });
+      if (isAd){
+       setAdvertisementState({ ...advertisementState, isAdPlayed: true });
+      }
       setAdvertisementState({
         ...advertisementState,
         timer: time,
-        message: message,
         showAd: isAd,
+        message: message,
         showNotification: true,
       });
     };
@@ -34,7 +36,7 @@ const withAdvertisement = (WrappedComponent) => {
     return <WrappedComponent {...props} {...advertisementState} displayHandler={displayAdHandler} stopAd={stopAd} />;
   };
 
-  return EnhancedComponent;
+  return NewEnhancedComponent;
 };
 
 export default withAdvertisement;

@@ -1,21 +1,24 @@
-// App.js
-import React, { useState, useEffect } from 'react';
-import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import AllMovies from './pages/AllMoviesPage';
-import LoginPage from './pages/LoginPage';
-import NowShowing from './pages/NowShowingPage';
-import HomePage from './pages/HomePage';
-import Header from './components/Header';
-import { userIsLoggedIn, loginUser, logoutUser } from './services/AuthService';
-import UserContext from './contexts/UserContext';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import AllMovies from "./pages/AllMoviesPage";
+import LoginPage from "./pages/LoginPage";
+import NowShowing from "./pages/NowShowingPage";
+import HomePage from "./pages/HomePage";
+import Header from "./components/Header";
+import { userIsLoggedIn, loginUser, logoutUser } from "./services/AuthService";
+import UserContext from "./contexts/UserContext";
+import MovieContextProvider from "./contexts/MovieContext";
+import { LOGIN_CREDENTIALS } from "./constants/service.constants";
+import { ROUTE_PATHS } from "./constants";
 
 function App() {
   const [isLoggedIn, setLoggedIn] = useState(userIsLoggedIn());
 
-  // On component mount, check local storage for user information
   useEffect(() => {
-    const storedUserName = localStorage.getItem('userName');
+    const storedUserName = localStorage.getItem(
+      LOGIN_CREDENTIALS.usernamelabel
+    );
     if (storedUserName) {
       setLoggedIn(true);
     }
@@ -25,15 +28,10 @@ function App() {
     const user = loginUser(enteredUserName, password);
 
     if (user) {
-      // Successful login
-      console.log('Login successful');
       setLoggedIn(true);
-      // Store user information in local storage
-      localStorage.setItem('userName', enteredUserName);
+      localStorage.setItem(LOGIN_CREDENTIALS.usernamelabel, enteredUserName);
       return true;
     } else {
-      // Failed login
-      console.log('Invalid credentials');
       return false;
     }
   };
@@ -41,34 +39,28 @@ function App() {
   const handleLogout = () => {
     logoutUser();
     setLoggedIn(false);
-    // Remove user information from local storage on logout
-    localStorage.removeItem('userName');
+    localStorage.removeItem(LOGIN_CREDENTIALS.usernamelabel);
   };
 
   return (
     <div className="App">
       <Router>
-        <UserContext.Provider value={{ isLoggedIn, onLogout: handleLogout, onLogin: handleLogin }}>
-          <Header />
-          <Routes>
-            <Route
-              path="/"
-              element={<HomePage />}
-            />
-            <Route path="/allMovies" element={<AllMovies />} />
-            <Route
-              path="/login"
-              element={<LoginPage/>}
-            ></Route>
-            {isLoggedIn ? (
-              <Route path="/showTime" element={<NowShowing/>} />
-            ) : (
-              <Route
-                path="/showTime"
-                element={<LoginPage/>}
-              />
-            )}
-          </Routes>
+        <UserContext.Provider
+          value={{ isLoggedIn, onLogout: handleLogout, onLogin: handleLogin }}
+        >
+          <MovieContextProvider>
+            <Header />
+            <Routes>
+              <Route path={ROUTE_PATHS.home} element={<HomePage />} />
+              <Route path={ROUTE_PATHS.allMovies} element={<AllMovies />} />
+              <Route path={ROUTE_PATHS.login} element={<LoginPage />}></Route>
+              {isLoggedIn ? (
+                <Route path={ROUTE_PATHS.showTime} element={<NowShowing />} />
+              ) : (
+                <Route path={ROUTE_PATHS.login} element={<LoginPage />} />
+              )}
+            </Routes>
+          </MovieContextProvider>
         </UserContext.Provider>
       </Router>
     </div>

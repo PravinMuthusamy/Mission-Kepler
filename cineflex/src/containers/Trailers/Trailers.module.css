@@ -54,10 +54,8 @@
 
 .watchNowButton {
   background: linear-gradient(to right, #f6a622, #ac8813);
-  color: #fff;
   padding: 20px 30px;
   border: none;
-  cursor: pointer;
   font-size: 1.4em;
   text-decoration: none;
 }

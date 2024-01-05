@@ -20,5 +20,22 @@ export const NAVBAR = {
 
   export const SHORT_TEASERS = {
     title: "Short Teasers",
-    noTeasers: "More teasers coming soon!!!",
+    upcoming: "More teasers coming soon!!!",
+  };
+
+  export const MOVIES_LIST = {
+    title: "All Movies",
+    button: "LOAD MORE",
+    moviesToShow: 6,
+    upcoming: "More movies coming soon!!!",
+  };
+  
+  export const MOVIE_DETAILS = {
+    likes: " Likes",
+    displayContent: "Advertisement in ",
+    adContent: "Resumes in ",
+    displayTime: 15,
+    adTime: 5,
+    actors: "ACTORS",
+    upcoming: "Movie is coming soon!!!",
   };

@@ -9,7 +9,6 @@ const LotteryForm = () => {
 
   const handleTryLuck = () => {
     console.log(mobileNumber);
-    // Validate the length of the mobile number
     if (mobileNumber.length === 10) {
       
       const isEven = parseInt(mobileNumber, 10) % 2 === 0;
@@ -25,11 +24,6 @@ const LotteryForm = () => {
     setMobileNumber(e.target.value);
   };
 
-  // const handleTryLuck = () => {
-  //   if (mobileNumber.length === 10) {
-  //       handleTryLuck(mobileNumber);
-  //     }
-  // };
   const inputStyle = {
     border: (mobileNumber.length > 0 && mobileNumber.length < 10)? '1px solid red' : 'initial',
   };

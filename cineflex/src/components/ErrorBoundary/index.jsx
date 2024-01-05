@@ -24,9 +24,7 @@ class ErrorBoundary extends React.Component {
       result:error.message
     })
   }
-
-
-
+  
   render() {
    
       if( this.state.hasError){

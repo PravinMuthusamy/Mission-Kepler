@@ -1,21 +1,22 @@
 import React,{useContext} from "react";
 import { Link } from "react-router-dom";
 import styles from "./Trailers.module.css";
-import Image from "../Image";
+import Image from "../../components/Image";
 import { TRAILER } from "../../constants/component.constants";
 import SintelImage from "../../Assets/sindel-background.png";
 import UserContext from "../../contexts/UserContext";
+import { ROUTE_PATHS } from "../../constants";
 
 const Trailers = () => {
   const { isLoggedIn } = useContext(UserContext);
-  const watchNowLink = isLoggedIn ? "/showTime" : "/login";
+  const watchNowLink = isLoggedIn ? ROUTE_PATHS.showTime : ROUTE_PATHS.login;
 
   return (
     <div className={styles.trailerContainer}>
       <h2 className={styles.trailerTitle}>{TRAILER.title}</h2>
       {!isLoggedIn && (
         <p className={styles.signInContainer}>
-          {TRAILER.signInMsg} <Link to={"/login"}>{TRAILER.signInLink}</Link>
+          {TRAILER.signInMsg} <Link to={ROUTE_PATHS.login}>{TRAILER.signInLink}</Link>
         </p>
       )}
       <div className={styles.movieContainer}>

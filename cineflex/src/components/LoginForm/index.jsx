@@ -1,6 +1,7 @@
 import React, { useRef, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { LOGIN_FORM } from "../../constants/component.constants";
+import { ROUTE_PATHS } from "../../constants";
 import styles from "./LoginForm.module.css";
 import UserContext from "../../contexts/UserContext";
 
@@ -16,18 +17,16 @@ const LoginForm = () => {
     const enteredPassword = passwordRef.current.value;
 
     if (!enteredUsername || !enteredPassword) {
-      setErrorMessage("Please enter both username and password");
+      setErrorMessage(LOGIN_FORM.required);
       return;
     }
 
-    // Call onLogin function with entered username and password
     const loginSuccess = onLogin(enteredUsername, enteredPassword);
 
     if (loginSuccess) {
-      // Redirect to home page after successful login
-      navigate("/");
+      navigate(ROUTE_PATHS.home);
     } else {
-      setErrorMessage("Invalid username or password");
+      setErrorMessage(LOGIN_FORM.invalid);
     }
   };
 

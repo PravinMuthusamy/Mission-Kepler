@@ -1,0 +1,28 @@
+.moviesListWrapper {
+  width: 49%;
+}
+
+.movieListTitle {
+  font-size: 2.6rem;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.moviesContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, calc(100% / 3 - 28px));
+  justify-content: space-between;
+  height: 65vh;
+  overflow: scroll;
+  margin-bottom: 28px;
+}
+
+.trailerBtn {
+    font-size: 1.4em;
+  padding: 20px 38px;
+  background: linear-gradient(to right, #f6a622, #ac8813);
+}
+
+.movieListWrapper::-webkit-scrollbar {
+  display: none;
+}

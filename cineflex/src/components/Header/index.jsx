@@ -5,51 +5,59 @@ import Image from "../Image";
 import Logo from "../../Assets/Logo.png";
 import { USER } from "../../constants/component.constants";
 import UserContext from "../../contexts/UserContext";
+import { ROUTE_PATHS } from "../../constants";
+import { PUBLIC_NAVS } from "../../constants";
+import { PRIVATE_NAVS } from "../../constants";
 
 function Header() {
   const { isLoggedIn, onLogout } = useContext(UserContext);
   const location = useLocation();
-  const isLoginPage = location.pathname === "/login";
+  const isLoginPage = location.pathname === ROUTE_PATHS.login;
 
   return (
     <div className={styles.headerWrapper}>
       <div className={styles.logoContainer}>
-        <Link to="/" className={styles.logoLink}>
+        <Link to={ROUTE_PATHS.home} className={styles.logoLink}>
           <Image imgSrc={Logo} imgAlt="logo" className={styles.logo} />
         </Link>
       </div>
 
       {!isLoginPage && (
-        // Conditionally render Home and AllMovies
         <div className={styles.navigationLinks}>
-          <Link to="/" className={styles.navigationLink}>
-            HOME
+          <Link to={ROUTE_PATHS.home}   className={`${styles.navigationLink} ${
+              location.pathname === ROUTE_PATHS.home ? styles.selected : ""
+            }`}>
+            {PUBLIC_NAVS.homeLabel}
           </Link>
-          <Link to="/allMovies" className={styles.navigationLink}>
-            ALLMOVIES
+          <Link to={ROUTE_PATHS.allMovies} className={`${styles.navigationLink} ${
+              location.pathname === ROUTE_PATHS.allMovies ? styles.selected : ""
+            }`}>
+            {PUBLIC_NAVS.allMovieslabel}
           </Link>
 
-          {/* Conditionally render NowShowing if logged in */}
           {isLoggedIn && (
-            <Link to="/showTime" className={styles.navigationLink}>
-              NOW SHOWING
+            <Link to={ROUTE_PATHS.showTime} className={`${styles.navigationLink} ${
+              location.pathname === ROUTE_PATHS.showTime ? styles.selected : ""
+            }`}>
+             {PRIVATE_NAVS.nowShowingLabel}
             </Link>
           )}
         </div>
       )}
       {!isLoginPage && (
         <div className={styles.userInfo}>
-          {/* Conditionally render Login or Hi User | Logout */}
           {isLoggedIn ? (
             <div>
               <span className={styles.greeting}>{`Hi ${USER.name} | `}</span>
               <button onClick={onLogout} className={styles.logoutBtn}>
-                Logout
+                {PUBLIC_NAVS.logoutlabel}
               </button>
             </div>
           ) : (
-            <Link to="/login" className={styles.navigationLink}>
-              LOGIN
+            <Link to={ROUTE_PATHS.login} className={`${styles.navigationLink} ${
+              location.pathname === ROUTE_PATHS.login ? styles.selected : ""
+            }`}>
+              {PUBLIC_NAVS.loginlabel}
             </Link>
           )}
         </div>

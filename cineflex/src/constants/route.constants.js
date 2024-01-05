@@ -5,20 +5,14 @@ export const ROUTE_PATHS = {
     showTime: "/showTime",
   };
   
-  export const PUBLIC_NAVS = [
+  export const PUBLIC_NAVS = {
+    homeLabel: "HOME",
+    allMovieslabel: "ALL MOVIES",
+    loginlabel: "LOGIN",
+    logoutlabel: "Logout"
+  }
+
+  export const PRIVATE_NAVS = 
     {
-      path: "/",
-      label: "HOME",
-    },
-    {
-      path: "/allMovies",
-      label: "ALL MOVIES",
-    },
-  ];
-  
-  export const PRIVATE_NAVS = [
-    {
-      path: "/showTime",
-      label: "NOW SHOWING",
-    },
-  ];
+      nowShowingLabel: "NOW SHOWING",
+    }
