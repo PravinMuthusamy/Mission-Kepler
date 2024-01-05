@@ -5,8 +5,8 @@
   }
   
   .teasersTitle {
-    font-weight: 300;
-    font-size: 2.6rem;
+    font-weight: 400;
+    font-size: 2.5rem;
     margin-bottom: 36px;
   }
   
@@ -14,4 +14,5 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+    gap: 12px;
   }

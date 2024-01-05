@@ -8,7 +8,6 @@ const LotteryForm = () => {
   if(error)throw new Error(error)
 
   const handleTryLuck = () => {
-    console.log(mobileNumber);
     if (mobileNumber.length === 10) {
       
       const isEven = parseInt(mobileNumber, 10) % 2 === 0;
@@ -28,8 +27,9 @@ const LotteryForm = () => {
     border: (mobileNumber.length > 0 && mobileNumber.length < 10)? '1px solid red' : 'initial',
   };
 const disableButton = {
-  disabled : (mobileNumber.length < 10)? 'true' : 'false',
+  cursor : (mobileNumber.length === 10)? "" : 'none',
 };
+
   return (
     <div className={styles.lotteryFormWrapper}>
         {LOTTERY.message}

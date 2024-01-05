@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 const withAdvertisement = (WrappedComponent) => {
+  
   const NewEnhancedComponent = (props) => {
     const [advertisementState, setAdvertisementState] = useState({
       timer: 0,

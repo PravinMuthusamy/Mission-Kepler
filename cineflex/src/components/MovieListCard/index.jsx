@@ -4,10 +4,9 @@ import styles from './MovieListCard.module.css';
 import Image from "../Image";
 import { MOVIE_CARDS } from "../../constants";
 
-const MovieListCard = ({ movieData, index, movieHandler, likeHandler }) => {
+const MovieListCard = memo(({ movieData, index, movieHandler, likeHandler }) => {
   const { link, movie, likes, id, isLiked } = movieData;
-  console.log("movie listtttt...");
-
+  console.log("movie list card");
   const cardClickHandler = () => {
     movieHandler(index);
   };
@@ -22,12 +21,13 @@ const MovieListCard = ({ movieData, index, movieHandler, likeHandler }) => {
       <div className={styles.movieListCardDetails}>
         <div>
           <p className={styles.movieListCardTitle}>{movie}</p>
-          <p className={styles.movieListCardLikes}>{likes.toString().concat(MOVIE_CARDS.likes)}</p>
+          <p className={styles.movieListCardLikes}>{likes.toString().concat(" ",MOVIE_CARDS.likes)}</p>
         </div>
         <FaThumbsUp className={`${styles.movieListCardLikeIcon} ${isLiked && styles.movieListCardLikedIcon}`} onClick={iconClickHandler} />
       </div>
     </div>
   );
-};
+},(prev,next)=> (prev.movieData.likes===next.movieData.likes)
+);
 
-export default memo(MovieListCard);
+export default MovieListCard;

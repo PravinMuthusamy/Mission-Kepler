@@ -12,7 +12,7 @@
 }
 
 .logo {
-  height: 50px;
+  height: 45px;
 }
 
 .navigationLinks {
@@ -46,4 +46,5 @@
   cursor: pointer;
   outline: inherit;
   font-size: 20px;
+  letter-spacing: 0.8px;
 }

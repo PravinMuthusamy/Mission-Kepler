@@ -1,5 +1,6 @@
 import { useEffect, useRef, useMemo } from "react";
-import { MdOutlinePlayCircleFilled } from "react-icons/md";
+import { FaPlay } from "react-icons/fa";
+
 import styles from "./TeaserCard.module.css";
 import Image from "../Image";
 import withAdvertisement from "../../HOC/withAdvertisement";
@@ -79,7 +80,10 @@ const TeaserCard = ({ title, videoLink, timer, message, showAd, showNotification
           {TEASER_CARD.videoWarning}
         </video>
         <span className={styles.playIconContainer} ref={iconRef}>
-          <MdOutlinePlayCircleFilled onClick={videoPlayHandler} className={styles.playIcon} />
+          <div className={styles.playIcon} onClick={videoPlayHandler}  >
+            <FaPlay size={35} />
+          </div>
+          
         </span>
       </div>
       <h3 className={styles.teaserTitle}>{title}</h3>

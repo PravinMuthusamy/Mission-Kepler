@@ -10,6 +10,7 @@ import { userIsLoggedIn, loginUser, logoutUser } from "./services/AuthService";
 import UserContext from "./contexts/UserContext";
 import MovieContextProvider from "./contexts/MovieContext";
 import { LOGIN_CREDENTIALS } from "./constants/service.constants";
+import ProtectedRoute from "./components/ProtectedRoutes";
 import { ROUTE_PATHS } from "./constants";
 
 function App() {
@@ -54,11 +55,9 @@ function App() {
               <Route path={ROUTE_PATHS.home} element={<HomePage />} />
               <Route path={ROUTE_PATHS.allMovies} element={<AllMovies />} />
               <Route path={ROUTE_PATHS.login} element={<LoginPage />}></Route>
-              {isLoggedIn ? (
+              <Route path={ROUTE_PATHS.home} element={<ProtectedRoute />}>
                 <Route path={ROUTE_PATHS.showTime} element={<NowShowing />} />
-              ) : (
-                <Route path={ROUTE_PATHS.login} element={<LoginPage />} />
-              )}
+              </Route>
             </Routes>
           </MovieContextProvider>
         </UserContext.Provider>

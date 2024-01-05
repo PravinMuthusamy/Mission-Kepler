@@ -1,7 +1,7 @@
 import React from "react";
+import styles from "./ErrorBoundary.module.css";
 import SuccessMessage from "../SuccessMessage";
 import ErrorMessage from "../ErrorMessage";
-import styles from "./ErrorBoundary.module.css";
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -13,12 +13,10 @@ class ErrorBoundary extends React.Component {
   }
 
   static getDerivedStateFromError(error) {
-    console.log("error in");
     return { hasError: true };
   }
 
-  componentDidCatch(error, errorInfo) {
-    console.error("LotterySection Error:", error, errorInfo);
+  componentDidCatch(error) {
     this.setState({
       hasError: true,
       result:error.message

@@ -1,49 +1,60 @@
 .teaserCard {
-    width: calc(100% / 3 - 16px);
-  }
-  
-  .teaserVideo {
-    width: 100%;
-    height: 19rem;
-    object-fit: cover;
-  }
-  
-  .teaserTitle {
-    font-size: 1.68rem;
-    font-weight: 300;
-    margin: 12px 0;
-  }
-  
-.teaserImage{
+  width: calc(100% / 3 - 16px);
+}
+
+.teaserVideo {
+  width: 100%;
+  height: 19rem;
+  object-fit: cover;
+}
+
+.teaserTitle {
+  font-size: 1.68rem;
+  font-weight: 400;
+  margin: 12px 0;
+}
+
+.teaserImage {
   position: absolute;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
   object-fit: contain;
 }
 
-  .videoContainer {
-    position: relative;
-  }
-  
-  .playIconContainer {
-    position: absolute;
-    left: 40%;
-    top: 35%;
-    height: 85px;
-    width: 85px;
-    color: #000;
-  }
-  
-  .playIcon {
-    width: 100%;
-    height: 100%;
-  }
-  
-  .teaserDescription {
-    color: #4176b8;
-    font-size: 1.35rem;
-    font-weight: 400;
-    margin: 12px 0;
-  }
+.videoContainer {
+  position: relative;
+}
+
+.playIconContainer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 85px;
+  width: 85px;
+  color: #000;
+}
+
+.playIcon {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  color: #fff;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.playIcon svg {
+  padding-left: 6px;
+}
+
+.teaserDescription {
+  color: #4176b8;
+  font-size: 1.35rem;
+  font-weight: 400;
+  margin: 12px 0;
+}
