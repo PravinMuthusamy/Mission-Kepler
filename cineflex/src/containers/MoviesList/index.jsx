@@ -1,4 +1,4 @@
-import { useState, useContext, useCallback } from "react";
+import { useState, useContext, useCallback,useEffect,useRef } from "react";
 import styles from "./MoviesList.module.css";
 import MovieListCard from "../../components/MovieListCard";
 import { MOVIES_LIST } from "../../constants/container.constants";
@@ -8,8 +8,15 @@ const MoviesList = ({ movies }) => {
   const [moviesToShow, setMoviesToShow] = useState(MOVIES_LIST.moviesToShow);
   const { setMovies, updateMovies } = useContext(MovieContext);
   
+  const moviesContainerRef = useRef(null);
+
   const totalMovies = movies.length;
 
+  useEffect(() => {
+    if (moviesContainerRef.current && moviesToShow > MOVIES_LIST.moviesToShow) {
+      moviesContainerRef.current.scrollTop += 780;
+    }
+  }, [moviesToShow]);
   const handleClick = (e) => {
     if (moviesToShow < totalMovies) {
       setMoviesToShow((prevMoviesToShow) => {
@@ -63,7 +70,7 @@ const MoviesList = ({ movies }) => {
   return (
     <div className={styles.moviesListWrapper}>
       <h1 className={styles.movieListTitle}>{MOVIES_LIST.title}</h1>
-      <div className={styles.moviesContainer}>{getMoviesContent()}</div>
+      <div ref={moviesContainerRef} className={styles.moviesContainer}>{getMoviesContent()}</div>
       <button className={styles.trailerBtn} onClick={handleClick}>
         {MOVIES_LIST.button}
       </button>

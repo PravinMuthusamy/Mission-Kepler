@@ -1,6 +1,7 @@
 .errorMessage {
+  height: 25px;
     color: #ff0000;
-    margin-bottom: 24px;
+    margin-bottom: 10px;
   }
 
   .inputGroup{

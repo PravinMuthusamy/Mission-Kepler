@@ -18,7 +18,10 @@ function Header() {
     <div className={styles.headerWrapper}>
       <div className={styles.logoContainer}>
         <Link to={ROUTE_PATHS.home} className={styles.logoLink}>
-          <Image imgSrc={Logo} imgAlt="logo" className={styles.logo} />
+          {/* <Image imgSrc={Logo} imgAlt="logo" className={styles.logo} /> */}
+          <div className={styles.headerLogo}>
+            Cine<span>FLEX</span>
+          </div>
         </Link>
       </div>
 

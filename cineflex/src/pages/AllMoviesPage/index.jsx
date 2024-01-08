@@ -28,14 +28,18 @@ const AllMovies = () => {
       .catch(() => setMovies({ currentMovieIndex: -1, data: [] }));
   }, [setMovies]);
 
-  if (!isContentLoaded) {
-    return <Loader />;
-  }
-
   return (
     <div className={styles.allMoviesContainer}>
-      <MoviesList movies={movies.data} />
-      <MovieDescrption/>
+      {isContentLoaded ? (<>
+        <MoviesList movies={movies.data} />
+        <MovieDescrption />
+      </>
+      ) : (
+        <div className={styles.loaderContainer}>
+          <Loader />
+        </div>
+      )}
+      
     </div>
   );
 };

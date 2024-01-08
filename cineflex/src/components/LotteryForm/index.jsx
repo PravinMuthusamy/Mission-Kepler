@@ -1,20 +1,19 @@
-import React, { useState } from 'react';
-import styles from './LotteryForm.module.css';
-import { LOTTERY } from '../../constants';
+import React, { useEffect, useState } from "react";
+import styles from "./LotteryForm.module.css";
+import { LOTTERY } from "../../constants";
 
 const LotteryForm = () => {
-  const [mobileNumber, setMobileNumber] = useState('');
-  const [error,setError]=useState();
-  if(error)throw new Error(error)
+  const [mobileNumber, setMobileNumber] = useState("");
+  const [error, setError] = useState('');
+  // if (error) throw new Error(error);
 
   const handleTryLuck = () => {
     if (mobileNumber.length === 10) {
-      
       const isEven = parseInt(mobileNumber, 10) % 2 === 0;
-      if(isEven){
-        setError("success")
-      }else{
-        setError("error")
+      if (isEven) {
+        setError("success");
+      } else {
+        setError("error");
       }
     }
   };
@@ -23,20 +22,35 @@ const LotteryForm = () => {
     setMobileNumber(e.target.value);
   };
 
+  useEffect(() => {
+    if (error) throw new Error(error);
+  }, [error]);
+
   const inputStyle = {
-    border: (mobileNumber.length > 0 && mobileNumber.length < 10)? '1px solid red' : 'initial',
+    border:
+      mobileNumber.length > 0 && mobileNumber.length < 10
+        ? "1px solid red"
+        : "1px solid transparent",
   };
-const disableButton = {
-  cursor : (mobileNumber.length === 10)? "" : 'none',
-};
+  const disableButton = {
+    cursor: mobileNumber.length === 10 ? "" : "none",
+  };
 
   return (
     <div className={styles.lotteryFormWrapper}>
-        {LOTTERY.message}
+      {LOTTERY.message}
       <label>
-        <input type="text" placeholder={LOTTERY.placeholder} value={mobileNumber} style={inputStyle} onChange={handleInputChange} />
+        <input
+          type="text"
+          placeholder={LOTTERY.placeholder}
+          value={mobileNumber}
+          style={inputStyle}
+          onChange={handleInputChange}
+        />
       </label>
-      <button onClick={handleTryLuck} style={disableButton}>{LOTTERY.button}</button>
+      <button onClick={handleTryLuck} style={disableButton}>
+        {LOTTERY.button}
+      </button>
     </div>
   );
 };

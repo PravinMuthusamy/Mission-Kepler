@@ -32,7 +32,7 @@ const LoginForm = () => {
 
   return (
     <form>
-      <div className={styles.errorMessage}>{errorMessage}</div>
+      
       <div className={styles.inputGroup}>
         <label htmlFor={LOGIN_FORM.email} className={styles.inputLabel}>
           {LOGIN_FORM.email}
@@ -55,6 +55,7 @@ const LoginForm = () => {
           className={styles.inputField}
           defaultValue={LOGIN_FORM.passwordValue}/>
       </div>
+      <p className={styles.errorMessage}>{errorMessage}</p>
       <button type="button" className={styles.loginBtn} onClick={handleLoginClick}>
       {LOGIN_FORM.button}
       </button>
